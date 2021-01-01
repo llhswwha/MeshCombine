@@ -279,8 +279,8 @@ public static class MeshCombineHelper
         
         CombinedMesh combinedMesh=new CombinedMesh(source.transform,null,null);
         combinedMesh.DoCombine(true);
-        //target=combinedMesh.CreateNewGo(false,target);
-        //target.AddComponent<MeshInfo>();
+        target=combinedMesh.CreateNewGo(false,target);
+        target.AddComponent<MeshInfo>();
         Debug.Log("Combine:"+source+"->"+target);
         return target;
     }
@@ -289,8 +289,8 @@ public static class MeshCombineHelper
         
         CombinedMesh combinedMesh=new CombinedMesh(source.transform,null,null);
         yield return combinedMesh.DoCombine_Coroutine(true,waitCount);
-        //target=combinedMesh.CreateNewGo(false,target);
-        //target.AddComponent<MeshInfo>();
+        target=combinedMesh.CreateNewGo(false,target);
+        target.AddComponent<MeshInfo>();
         Debug.Log("Combine:"+source+"->"+target);
         if(isDestroy){
             GameObject.Destroy(source);
@@ -374,7 +374,7 @@ public static class MeshCombineHelper
         GameObject target=combinedMesh.CreateNewGo(false,null);
         target.name=source.name+"_Combined";
         goNew.transform.SetParent(target.transform);
-        //GameObject.DestroyImmediate(goNew);
+        GameObject.DestroyImmediate(goNew);
         Debug.LogError(string.Format("CombinedMesh 用时:{0}ms,数量:{1}",(DateTime.Now-start).TotalMilliseconds,count));
         return target;
     }
@@ -388,7 +388,7 @@ public static class MeshCombineHelper
         GameObject target=combinedMesh.CreateNewGo(false,null);
         target.name=source.name+"_Combined";
         goNew.transform.SetParent(target.transform);
-        //GameObject.DestroyImmediate(goNew);
+        GameObject.DestroyImmediate(goNew);
         Debug.LogError(string.Format("CombinedMesh 用时:{0}ms,数量:{1}",(DateTime.Now-start).TotalMilliseconds,count));
         if(isDestroy)
         {

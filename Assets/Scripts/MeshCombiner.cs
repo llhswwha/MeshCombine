@@ -7,6 +7,8 @@ using System;
 //[RequireComponent(typeof(MeshRenderer),typeof(MeshFilter))]
 public class MeshCombiner : MonoBehaviour
 {
+    public int CombineMode=0;//0:sourceRoot合并为一个模型，1:sourceRoot的子物体分别合并为一个模型
+
     public GameObject sourceRoot;
 
     public List<GameObject> sourceList=new List<GameObject>();
@@ -66,12 +68,22 @@ public class MeshCombiner : MonoBehaviour
     private void CombineEx(int mode){
         Debug.Log("CombineEx:"+mode+"|"+gameObject);
         resultList=new List<GameObject>();
-        if(sourceList.Count==0&&sourceRoot!=null){
+        string sourceName="";
+        if((sourceList.Count==0 || CombineMode == 0)&&sourceRoot!=null){
             sourceList=new List<GameObject>();
-            for(int i=0;i<sourceRoot.transform.childCount;i++){
-                sourceList.Add(sourceRoot.transform.GetChild(i).gameObject);
+            if(CombineMode==0){
+                sourceList.Add(sourceRoot);
+                sourceName+=sourceRoot.name;
+            }
+            else{
+                for(int i=0;i<sourceRoot.transform.childCount;i++){
+                    GameObject child=sourceRoot.transform.GetChild(i).gameObject;
+                    sourceList.Add(child);
+                    sourceName+=child.name+";";
+                }
             }
         }
+        Debug.LogError("sourceList:"+sourceName);
         foreach(var source in sourceList){
             if(source==null)continue;
 
