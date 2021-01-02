@@ -993,6 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8be72c537feea9408003b68a5642bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CombineMode: 0
   sourceRoot: {fileID: 0}
   sourceList:
   - {fileID: 885221732}
@@ -1015,8 +1016,8 @@ MonoBehaviour:
     NewGo: {fileID: 0}
   CombineBySub: 0
   SubCombiners: []
-  IsCoroutine: 0
-  WaitCount: 10000
+  IsCoroutine: 1
+  WaitCount: 1
   AutoAdd: 0
   mergedObjs: []
   mergedObjRoot: {fileID: 0}
@@ -8155,13 +8156,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8be72c537feea9408003b68a5642bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceRoot: {fileID: 1338956167}
+  CombineMode: 0
+  sourceRoot: {fileID: 2035270476}
   sourceList: []
   resultList: []
   Auto: 0
-  IsDestroySource: 0
+  IsDestroySource: 1
   IsCombine: 0
-  MaxVertex: 105535
+  MaxVertex: 65535
   indexFormat: 0
   NoLimit: 1
   combinedMesh:
@@ -8174,8 +8176,8 @@ MonoBehaviour:
     NewGo: {fileID: 0}
   CombineBySub: 0
   SubCombiners: []
-  IsCoroutine: 0
-  WaitCount: 10000
+  IsCoroutine: 1
+  WaitCount: 1
   AutoAdd: 0
   mergedObjs: []
   mergedObjRoot: {fileID: 0}
@@ -8584,6 +8586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8be72c537feea9408003b68a5642bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CombineMode: 0
   sourceRoot: {fileID: 0}
   sourceList: []
   resultList: []
@@ -10203,11 +10206,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3415424246349755250, guid: 893a539b35b14d94291019b0e3f594b0, type: 3}
   m_PrefabInstance: {fileID: 1338956165}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1338956167 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2606976073692260808, guid: 893a539b35b14d94291019b0e3f594b0, type: 3}
-  m_PrefabInstance: {fileID: 1338956165}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1353272649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 019d2c5cc8a15d940aa491f78428f270, type: 3}
@@ -10578,6 +10576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8be72c537feea9408003b68a5642bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CombineMode: 0
   sourceRoot: {fileID: 0}
   sourceList:
   - {fileID: 885221732}
@@ -10602,8 +10601,8 @@ MonoBehaviour:
     NewGo: {fileID: 0}
   CombineBySub: 0
   SubCombiners: []
-  IsCoroutine: 0
-  WaitCount: 10000
+  IsCoroutine: 1
+  WaitCount: 1
   AutoAdd: 0
   mergedObjs: []
   mergedObjRoot: {fileID: 0}
@@ -12276,8 +12275,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519505930}
-  m_LocalRotation: {x: -0.062305495, y: -0.9344625, z: 0.2847777, w: -0.20444945}
-  m_LocalPosition: {x: 325.65994, y: 9.330266, z: 326.26614}
+  m_LocalRotation: {x: -0.25018126, y: -0.5790388, z: 0.19272944, w: -0.75165075}
+  m_LocalPosition: {x: 3176.2146, y: 136.05577, z: 3229.8052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12718,6 +12717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8be72c537feea9408003b68a5642bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CombineMode: 0
   sourceRoot: {fileID: 0}
   sourceList:
   - {fileID: 981637367}
@@ -12739,8 +12739,8 @@ MonoBehaviour:
     NewGo: {fileID: 0}
   CombineBySub: 0
   SubCombiners: []
-  IsCoroutine: 0
-  WaitCount: 10000
+  IsCoroutine: 1
+  WaitCount: 1
   AutoAdd: 0
   mergedObjs: []
   mergedObjRoot: {fileID: 0}
