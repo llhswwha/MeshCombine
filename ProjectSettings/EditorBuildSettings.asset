@@ -4,5 +4,41 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/t3.unity
+    guid: f1a2a9997c1ec62489d88f75948b5639
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (1)_Combined.unity
+    guid: 069a46ce7ab337f4fbb2e9c983bc872f
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (2)_Combined.unity
+    guid: 87193b9083964214bb62c5f0e74c724d
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (3)_Combined.unity
+    guid: 000347da4935e894d99ca3e98997a748
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (4)_Combined.unity
+    guid: 4789363ef30c61749b5334ee10138824
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (5)_Combined.unity
+    guid: ad6592c567c57ef4a8085bedbeea56b0
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (6)_Combined.unity
+    guid: 7864a61d7c203e744bece11c9570e48a
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (7)_Combined.unity
+    guid: 25914cb1319db05418f5bb29d2b57e4e
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (8)_Combined.unity
+    guid: c941175d641d12a45bbab38309ba1092
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (9)_Combined.unity
+    guid: 0c00ff7619b5b8e458811f6ebeac596c
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (10)_Combined.unity
+    guid: 743b9f4e9624acc4b9834aa8e73f11c3
+  - enabled: 1
+    path: Assets/CombinedScene/Group1 (11)_Combined.unity
+    guid: 8b157f0ecca70b943a623d8bbd194a81
   m_configObjects: {}
