@@ -25,10 +25,14 @@ public class MeshInfo : MonoBehaviour
     public void GetInfo(){
         meshFilter=gameObject.GetComponent<MeshFilter>();
         mesh=meshFilter.sharedMesh;
-
-        Vertices = mesh.vertices;
-        UV = mesh.uv;
-        Triangles = mesh.triangles;
+        if(mesh!=null){
+            Vertices = mesh.vertices;
+            UV = mesh.uv;
+            Triangles = mesh.triangles;
+        }
+        else{
+            Debug.LogError("MeshInfo.GetInfo mesh==null!:"+gameObject);
+        }
     }
 
     public float vertScale=0.03f;

@@ -142,6 +142,7 @@ public class CombinedMesh{
         Debug.Log(string.Format("DoCombine allList.Count:",allList.Count));
         for(int i=0;i<allList.Count;i++)
         {
+            Debug.LogWarning(string.Format("DoCombine {0} ({1}/{2})",allList[i].mesh,i+1,allList.Count));
             var newMesh=InnerDoCombine(allList[i],i);
             meshes.Add(newMesh);
         }
@@ -184,9 +185,10 @@ public class CombinedMesh{
         }
         meshes=new List<MeshPartInfo>();
         //Debug.Log(string.Format("DoCombine[{0}/{1}]:{2}",i,count,VertexCount));
-        Debug.Log(string.Format("DoCombine allList.Count:",allList.Count));
+        Debug.Log(string.Format("DoCombine allList.Count:{0}",allList.Count));
         for(int i=0;i<allList.Count;i++)
         {
+            Debug.LogWarning(string.Format("DoCombine_Coroutine {0} ({1}/{2})",allList[i].mesh,i+1,allList.Count));                                                                                                                                                                                                                                                                                                                                                                                                                            
             if(i % waitCount == 0){
                 yield return null;
             }
@@ -196,8 +198,8 @@ public class CombinedMesh{
 
         DateTime start=DateTime.Now;
         Debug.LogWarning(
-            string.Format("CombinedMesh 用时:{1}ms,Mesh数量:{1} 子模型数:{2},VertexCount:{3},Mat:{4}"
-            ,(DateTime.Now-start).TotalMilliseconds,count,allList.Count,VertexCount,mat)
+            string.Format("CombinedMesh 用时:{1},Mesh数量:{1} 子模型数:{2},VertexCount:{3},Mat:{4}"
+            ,(DateTime.Now-start),count,allList.Count,VertexCount,mat)
             );
         yield return null;
     }
@@ -316,7 +318,7 @@ public static class MeshCombineHelper
             matGo.name=material.name;
             matGo.transform.SetParent(goNew.transform);
         }
-        Debug.LogError(string.Format("CombineMaterials 用时:{0}ms,Mat数量:{1},Mesh数量:{2}",(DateTime.Now-start).TotalMilliseconds,mat2Filters.Count,count));
+        Debug.LogError(string.Format("CombineMaterials 用时:{0},Mat数量:{1},Mesh数量:{2}",(DateTime.Now-start),mat2Filters.Count,count));
         return goNew;
     }
 
@@ -328,22 +330,24 @@ public static class MeshCombineHelper
         int count=0;
         Dictionary<Material,List<MeshFilter>> mat2Filters=GetMatFilters(go,out count);
         yield return null;
+        int i=0;
         foreach(var item in mat2Filters)
         {
             Material material=item.Key;
             List<MeshFilter> list=item.Value;
-
+            Debug.LogWarning(string.Format("CombineMaterials_Coroutine {0} ({1}/{2})",material,i+1,mat2Filters.Count));
             CombinedMesh combinedMesh=new CombinedMesh(go.transform,list,material);
             yield return combinedMesh.DoCombine_Coroutine(true,waitCount);
             GameObject matGo=combinedMesh.CreateNewGo(false,null);
             matGo.name=material.name;
             matGo.transform.SetParent(goNew.transform);
             yield return goNew;
+            i++;
         }
         if(isDestroy){
             GameObject.Destroy(go);
         }
-        Debug.LogError(string.Format("CombineMaterials 用时:{0}ms,Mat数量:{1},Mesh数量:{2}",(DateTime.Now-start).TotalMilliseconds,mat2Filters.Count,count));
+        Debug.LogError(string.Format("CombineMaterials 用时:{0},Mat数量:{1},Mesh数量:{2}",(DateTime.Now-start),mat2Filters.Count,count));
         yield return goNew;
     }
    
@@ -361,7 +365,7 @@ public static class MeshCombineHelper
             MeshFilter filter=renderer.GetComponent<MeshFilter>();
             list.Add(filter);
         }
-        Debug.LogError(string.Format("GetMatFilters 用时:{0}ms,Mat数量:{1},Mesh数量:{2}",(DateTime.Now-start).TotalMilliseconds,mat2Filters.Count,count));
+        Debug.LogError(string.Format("GetMatFilters 用时:{0},Mat数量:{1},Mesh数量:{2}",(DateTime.Now-start),mat2Filters.Count,count));
         return mat2Filters;
     }
 
