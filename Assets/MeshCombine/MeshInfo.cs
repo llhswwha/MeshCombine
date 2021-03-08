@@ -12,6 +12,7 @@ public class MeshInfo : MonoBehaviour
 
     public Vector3[] Vertices;
     public Vector2[] UV;
+    public Vector3[] Normals;
 
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class MeshInfo : MonoBehaviour
             Vertices = mesh.vertices;
             UV = mesh.uv;
             Triangles = mesh.triangles;
+            Normals=mesh.normals;
         }
         else{
             Debug.LogError("MeshInfo.GetInfo mesh==null!:"+gameObject);
