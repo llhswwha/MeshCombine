@@ -11,6 +11,13 @@ public class Message
     }
 }
 
+
+public class MyCustomMessage:Message
+{
+    public int _intValue;
+    public float _floatValue;
+}
+
 public class CreateEnemyMessage : Message
 {
 
